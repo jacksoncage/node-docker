@@ -23,6 +23,6 @@ mkdir /var/www
 # Expose port 8080
 EXPOSE 8080
 
-ADD start /start.sh
+ADD start.sh /start.sh
 RUN chmod 0755 /start.sh
 CMD ["bash", "start.sh"]
