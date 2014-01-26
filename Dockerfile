@@ -12,15 +12,14 @@ RUN echo "Europe/Stockholm" > /etc/timezone; dpkg-reconfigure -f noninteractive 
 RUN export LANGUAGE=en_US.UTF-8; export LANG=en_US.UTF-8; export LC_ALL=en_US.UTF-8; locale-gen en_US.UTF-8; DEBIAN_FRONTEND=noninteractive dpkg-reconfigure locales
 
 # Install base system
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y wget curl nodejs
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y wget curl python-software-properties python g++ make
+RUN add-apt-repository ppa:chris-lea/node.js
+RUN apt-get update
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y nodejs
+RUN npm install nodemon -g
 
-# Install forever
-npm install forever -g
+RUN mkdir /var/www
 
-# Create www folder
-mkdir /var/www
-
-# Expose port 8080
 EXPOSE 8080
 
 ADD start.sh /start.sh
