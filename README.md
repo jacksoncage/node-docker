@@ -44,5 +44,5 @@ Now go to `<your container's ip>:<container's port>` in your browser
 ### Stop the container
 Stopping a running container is possible via the docker api. If only one instance of this container is running this command will stop it:
 
-	sudo docker stop `sudo docker ps |grep jacksoncage/node-docker |cut -d\  -f1`
+	sudo docker stop `sudo docker ps |grep jacksoncage/node |cut -d\  -f1`
 
