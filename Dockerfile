@@ -16,7 +16,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y wget curl python-software-
 RUN add-apt-repository ppa:chris-lea/node.js
 RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y nodejs
-RUN npm install nodemon -g
+RUN npm install -g nodemon
 
 RUN mkdir /var/www
 
