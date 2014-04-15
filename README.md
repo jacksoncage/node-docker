@@ -1,6 +1,13 @@
 Automated build of node.js with Docker
 ===========
 
+ > Based on (Debian official repository)[https://index.docker.io/_/debian/]
+
+### Startup environment variables
+Docker will make of the following environment variables when starting `start.sh`. Default values are:
+
+	EXECUTER npm
+	APP start
 
 ### Use the pre built image
 The pre built image can be downloaded using docker directly. After that you do not need to use this command again, you will have the image on your machine.
@@ -20,7 +27,11 @@ The container has all pre requisites set up to run any node.js application.
 
 	$ sudo docker run -i -d -p 8080 -v `pwd`/www:/var/www:ro jacksoncage/node
 
-The startup time for this container is quite long so give it a short coffee break before trying the browser on url http://localhost:8080.
+Can also be run with `nodemon` as `EXECUTER`
+
+	$ sudo docker run -i -d -p 8080 -e EXECUTER=nodemon -e APP=app.js -v `pwd`/www:/var/www:ro jacksoncage/node 
+
+Give it a short coffee break before trying the browser on url http://localhost:8080.
 
 
 #### Start the container and keep control

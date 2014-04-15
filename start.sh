@@ -1,5 +1,8 @@
 #!/bin/bash
 
-# Start node.js application via nodemon
+: "${EXECUTER:=npm}" # the executer to be used
+: "${APP:=start}" # the app's entry point or executer command
+
+# Start node.js application
 cd /var/www/
-nodemon app.js
+$EXECUTER $APP
