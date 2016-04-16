@@ -1,7 +1,7 @@
 Automated build of node.js with Docker
 ===========
 
- > Based on (Debian official repository)[https://index.docker.io/_/debian/]
+ > Based on [Debian official repository](https://index.docker.io/_/debian/)
 
 ### Startup environment variables
 Docker will make of the following environment variables when starting `start.sh`. Default values are:
